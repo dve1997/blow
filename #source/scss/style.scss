@@ -1,0 +1,335 @@
+// Обнуление стилей
+@import "null-style.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+   background-color: #333333;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+   padding: 15px 15px;
+}
+
+.section {
+
+   &__body {
+      max-width: 131rem;
+      margin: 0px auto;
+   }
+
+   &__rowpage {
+      display: grid;
+      grid-template: fit-content(75.5rem) / fit-content(7.5rem) 1fr;
+      grid-template-areas:
+         'columnpagecet columnblow';
+      border-radius: 10px;
+      overflow: hidden;
+   }
+
+   &__columnpagecet {
+      grid-area: columnpagecet;
+      background-color: #fff;
+      display: grid;
+      grid-template: repeat(12, 1fr) / 7.5rem;
+      position: relative;
+   }
+
+   &__cettext {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      min-width: 29rem;
+      transform: translateX(-37%) rotate(270deg);
+      font-size: 1.38rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.38;
+      color: #000;
+
+      & span {
+         color: #b3b3b3;
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__cettext {
+         min-width: 14.5rem;
+         transform: translateX(-24%) rotate(270deg);
+         font-size: 0.69rem;
+         line-height: 0.69;
+      }
+   }
+
+   &__cetlogo {
+      grid-row: 12/13;
+      margin: auto;
+
+      & img {
+         max-width: 2.5rem;
+         max-height: 2.5rem;
+      }
+   }
+
+   &__columnblow {
+      grid-area: columnblow;
+      position: relative;
+   }
+
+   &__bgimg {
+      position: relative;
+      padding: 0 0 61% 0;
+
+      & img {
+         position: absolute;
+         top: 0;
+         height: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__bgimg {
+         padding: 0 0 78% 0;
+      }
+   }
+
+   @media (orientation: portrait) {
+      &__bgimg {
+         position: relative;
+         padding: 0 0 140% 0;
+
+         & img {
+            position: absolute;
+            top: 0;
+            height: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+   }
+
+   &__columnblownew {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: grid;
+      grid-template: minmax(auto-fit, 28.97rem) minmax(auto-fit, 28.97rem) / 1fr;
+      padding: 6.25em 5.63em 11.43em 7.18em;
+   }
+
+   @media (max-width: 69em) {
+      &__columnblownew {
+         padding: 3.12em 2.63em 5.93em 3.68em;
+      }
+   }
+
+   @media (orientation: portrait) {
+      &__columnblownew {
+         padding: 3.12em 0em 5.93em 0.7em;
+      }
+   }
+
+   &__rowbut {
+      justify-self: center;
+      align-self: end;
+   }
+
+   &__but {
+      background-color: #000000;
+      padding: 1em 3.2em;
+      font-size: 1.38rem;
+      line-height: 1.38;
+      text-transform: uppercase;
+      border-radius: 30px;
+
+      & a {
+         color: #fff;
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__but {
+         padding: 0.5em 1.6em;
+         font-size: 0.69rem;
+         line-height: 0.69;
+      }
+   }
+}
+
+.blow {
+
+   &__body {
+      display: grid;
+      grid-template: 1fr / repeat(auto-fit, 1fr);
+   }
+
+   &__logo {
+      position: relative;
+
+      & img {
+         max-width: 6.5rem;
+         max-height: 1.93rem;
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__logo {
+
+         & img {
+            max-width: 3.25rem;
+            max-height: 0.97rem;
+         }
+      }
+   }
+
+   &__button1 {
+      grid-column: 9/10;
+      justify-self: end;
+      font-size: 1.38rem;
+      line-height: 1.38;
+
+      & a {
+         color: #000;
+      }
+
+      &:hover {
+         background-color: #000000;
+         border-radius: 30px;
+         padding: 0.45em 0.9em 0.63em;
+         transform-origin: top right;
+         transform: translate(20%, -20%);
+
+         & a {
+            color: #fff;
+         }
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__button1 {
+         padding: 0.5em 1.6em;
+         font-size: 0.69rem;
+         line-height: 0.69;
+
+         &:hover {
+            padding: 0.22em 0.45em 0.3em;
+            transform: translate(3%, -5%);
+         }
+      }
+   }
+
+   &__button2 {
+      grid-column: 10/11;
+      justify-self: end;
+      font-size: 1.38rem;
+      line-height: 1.38;
+
+      & a {
+         color: #000;
+      }
+
+      &:hover {
+         background-color: #000000;
+         border-radius: 30px;
+         padding: 0.45em 0.9em 0.63em;
+         transform-origin: top right;
+         transform: translate(20%, -20%);
+
+         & a {
+            color: #fff;
+         }
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__button2 {
+         padding: 0.5em 1.6em;
+         font-size: 0.69rem;
+         line-height: 0.69;
+
+         &:hover {
+            padding: 0.22em 0.45em 0.3em;
+            transform: translate(3%, -5%);
+         }
+      }
+   }
+
+   &__button3 {
+      grid-column: 11/12;
+      justify-self: end;
+      font-size: 1.38rem;
+      line-height: 1.38;
+
+      & a {
+         color: #000;
+      }
+
+      &:hover {
+         background-color: #000000;
+         border-radius: 30px;
+         padding: 0.45em 0.9em 0.63em;
+         transform-origin: top right;
+         transform: translate(20%, -20%);
+
+         & a {
+            color: #fff;
+         }
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__button3 {
+         padding: 0.5em 1.6em;
+         font-size: 0.69rem;
+         line-height: 0.69;
+
+         &:hover {
+            padding: 0.22em 0.45em 0.3em;
+            transform: translate(3%, -5%);
+         }
+      }
+   }
+
+   &__button4 {
+      grid-column: 12/13;
+      justify-self: end;
+      font-size: 1.38rem;
+      line-height: 1.38;
+
+      & a {
+         color: #000;
+      }
+
+      &:hover {
+         background-color: #000000;
+         border-radius: 30px;
+         padding: 0.45em 0.9em 0.63em;
+         transform-origin: top right;
+         transform: translate(20%, -20%);
+
+         & a {
+            color: #fff;
+         }
+      }
+   }
+
+   @media (max-width: 69em) {
+      &__button4 {
+         padding: 0.5em 1.6em;
+         font-size: 0.69rem;
+         line-height: 0.69;
+
+         &:hover {
+            padding: 0.22em 0.45em 0.3em;
+            transform: translate(3%, -5%);
+         }
+      }
+   }
+}
